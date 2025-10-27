@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monginius</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff5f7;
+      color: #333;
+    }
+
+    nav {
+      background-color: #ff4d4d;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav h1 {
+      color: #fff;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 10px;
+      padding: 10px 16px;
+      background-color: #fff;
+      color: #ff4d4d;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #fff0f5;
+      color: #000;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #ffe6e6, #fff);
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: palevioletred;
+    }
+
+    .hero img {
+      margin: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    section h1 {
+      font-size: 32px;
+      margin: 40px 0 20px;
+    }
+
+    .cake {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background-color: #f2f2f2;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .cake img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cake img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background-color: #f8f8f8;
+      color: palevioletred;
+      text-align: center;
+      font-size: 18px;
+      padding: 40px 20px;
+      margin-top: 40px;
+      line-height: 1.8;
+      border-top: 2px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
+
+      .hero img {
+        width: 90%;
+        height: auto;
+      }
+
+      .cake {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Monginius</h1>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Our History</a>
+      <a href="#">Become a Franchise</a>
+      <a href="#">Blogs</a>
+      <a href="#">Wedding Cakes</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Bring a box of <span>Happiness Today</span></h1>
+    <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/Delivery-web-01-2-prb2tuv0b8xzqq9p0zvt9xnwjdfxugrk30a96dd31e.png" width="500" height="500" />
+    <img src="https://www.monginis.net/wp-content/uploads/2022/07/Banner-web-1.png" width="500" height="500" />
+  </section>
+
+  <section>
+    <center><h1>Shop by <span style="color: palevioletred;">Cake</span></h1></center>
+    <div class="cake">
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/Tall-and-Fancy-Cake-9-min-scaled-pr2q5nk8snomjr875pa6dqsqo2am0csfgkpnbldtxs.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/tall-and-fancy-pqouxp5t8lfjjchur84emwklu7ry19ddvnjqowky4w.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/Premium-Cakes-pqov0r4xg7m39q23x1nr8mtjcapw1uhzarvjua1vww.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/Designer-Cakes-pqov1whtsx6pgke17jjcacdth921gj264gkwygckb4.jpg" />
+    </div>
+  </section>
+
+  <section>
+    <center><h1>Shop by <span style="color: palevioletred;">3D Cake</span></h1></center>
+    <div class="cake" style="background-color: #fff;">
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/3D-Special-Occasions-Cakes15-pqovduzwr1k15z0pdpmh0bqxjq45dwj8fndar6m95c.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/3D-Special-Occasions-Cakes113-pqovf9r703hikwyz5bkbqyxtmj5yxk4qmmlio4iztc.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/3D-Special-Occasions-Cakes112-pqovgmmsvhcfcmzz7woxcmlsikh21tis5cirmiiits.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/3D-Special-Occasions-Cakes110-pqovj7oto2vta18t4iwzph4fbpqe7us7i53u4wojps.jpg" />
+    </div>
+  </section>
+
+  <section>
+    <center><h1>Shop by <span style="color: palevioletred;">Pastry</span></h1></center>
+    <div class="cake">
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/2021-12-04_16_04_50_black-forest-pastry-pr0nigmilh4bbuiwh5cf4uj5mb4in6tk07fi3xpm8g.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/2021-12-04_16_06_16_devils-delight-pastry-pr0niuq3fznm5zyf6tfto8z2j370undj257sb34pn4.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/2021-05-27_16_14_08_Cherry-chocolate-mousse-cup-pr0nj52bj61rppjeifwpxod52bs27bikrke4l4pdqo.jpg" />
+      <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/1622273916612_41-scaled-pr0s5rwb3u5px3hrhgxqymkw7egkrn1j0buxd1muog.jpg" />
+    </div>
+  </section>
+
+  <section>
+    <center><h1>Shop by <span style="color: palevioletred;">Chocolates</span></h1></center>
+    <div class="cake" style="background-color: #fff;">
+      <img src="https://

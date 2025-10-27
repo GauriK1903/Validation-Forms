@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+    }
+
+    form {
+      background-color: #f7f7f7;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 15px;
+    }
+
+    td {
+      font-size: 16px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #err, #err1, #err2, #err3, #err4 {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <form action="login.html" name="f1">
+    <table>
+      <tr>
+        <td>User Name:</td>
+        <td><input type="text" onblur="blur1(this.id)" id="t1" name="unm" autocomplete="off" /></td>
+        <td id="err" style="color: red;"></td>
+      </tr>
+      <tr>
+        <td>Mobile Number:</td>
+        <td><input type="number" onblur="blur1(this.id)" id="t2" name="mno" autocomplete="off" /></td>
+        <td id="err1" style="color: red;"></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="email" onblur="blur1(this.id)" name="eml" id="t3" /></td>
+        <td id="err2" style="color: red;"></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" onblur="blur1(this.id)" name="psd1" id="t4" /></td>
+        <td id="err3" style="color: red;"></td>
+      </tr>
+      <tr>
+        <td>Confirm Password:</td>
+        <td><input type="password" onblur="blur1(this.id)" name="psd2" id="t5" /></td>
+        <td id="err4" style="color: red;"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button onclick="return focus1(event)">Register Now</button></td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    function blur1(id) {
+      if (id == "t1") {
+        let un = f1.unm.value;
+        let pattern = /^[A-Z]{1}[a-z]{1,10}$/;
+        if (un == "") {
+          err.innerHTML = "Username is required";
+          f1.unm.focus();
+        } else if (un.match(pattern)) {
+          err.innerHTML = "✓";
+        } else {
+          err.innerHTML = "Invalid username";
+          f1.unm.focus();
+        }
+      } else if (id == "t2") {
+        let mno = f1.mno.value;
+        let pattern1 = /^[9876]{1}[0-9]{9}$/;
+        if (mno == "") {
+          err1.innerHTML = "Mobile Number is required";
+          f1.mno.focus();
+        } else if (mno.match(pattern1)) {
+          err1.innerHTML = "✓";
+        } else {
+          err1.innerHTML = "Invalid Mobile Number";
+          f1.mno.focus();
+        }
+      } else if (id == "t3") {
+        let em = f1.eml.value;
+        let pattern2 = /^[a-z][a-z0-9]{0,9}[._]?[a-z0-9]{1,19}@[a-z]{2,19}\.(com|co.in|in|org|usa|fr|edu)$/;
+        if (em == "") {
+          err2.innerHTML = "Email is required";
+          f1.eml.focus();
+        } else if (em.match(pattern2)) {
+          err2.innerHTML = "✓";
+        } else {
+          err2.innerHTML = "Invalid Email";
+          f1.eml.focus();
+        }
+      } else if (id == "t4") {
+        let psd1 = f1.psd1.value;
+        let pattern3 = /^[a-zA-Z0-9@#$%&*]{2,9}[@#$%&*]{1}[a-zA-Z0-9@#$%&*]{3,10}$/;
+        if (psd1 == "") {
+          err3.innerHTML = "Password is required";
+        } else if (psd1.match(pattern3)) {
+          err3.innerHTML = "✓";
+        } else {
+          err3.innerHTML = "Invalid Password";
+          f1.psd1.focus();
+        }
+      }
+    }
+
+    function focus1(event) {
+      event.preventDefault();
+      let psd1 = document.getElementById("t4").value;
+      let psd2 = document.getElementById("t5").value;
+      let msg = document.getElementById("err4");
+
+      if (psd1 === psd2 && psd1 !== "") {
+        msg.innerHTML = "✓ Passwords match";
+        document.forms["f1"].submit();
+      } else {
+        msg.innerHTML = "Passwords do not match.";
+      }
+    }
+  </script>
+</body>
+</html>

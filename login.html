@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+    }
+
+    form {
+      background-color: #f0f0f0;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 15px;
+    }
+
+    td {
+      font-size: 16px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+
+    #message {
+      color: red;
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <form onsubmit="return validateLogin()">
+      <table>
+        <tr>
+          <td>User Name:</td>
+          <td><input type="text" id="username" autocomplete="off" /></td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td><input type="password" id="password" autocomplete="off" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <button type="submit">Login Now</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <a href="RegistrationForm.html">Register Here</a>
+          </td>
+        </tr>
+      </table>
+      <div id="message"></div>
+    </form>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
+
+      const usernamePattern = /^[A-Z][a-z]{1,10}$/;
+      const passwordPattern = /^[a-zA-Z0-9@#$%&*]{2,9}[@#$%&*]{1}[a-zA-Z0-9@#$%&*]{3,10}$/;
+
+      if (usernamePattern.test(username) && passwordPattern.test(password)) {
+        window.location.href = "Mongunis.html";
+        return false;
+      } else {
+        message.innerHTML = "Username and Password are not registered.<br>Please register now.";
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
